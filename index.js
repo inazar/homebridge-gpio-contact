@@ -1,14 +1,10 @@
 "use strict";
 
-var Service, Characteristic;
 const Switch = require('./Switch.js');
 const rpio = require('rpio');
 
 module.exports = function(homebridge)
 {
-  Service = homebridge.hap.Service;
-  Characteristic = homebridge.hap.Characteristic;
-
   homebridge.registerAccessory(
       "homebridge-gpio-switch", 
       "GPIO-Switch", 
@@ -18,9 +14,11 @@ module.exports = function(homebridge)
 
 class GPIOSwitch {
 
-    constructor()
+    constructor(homebridge, log, config)
     {    
         this.log = log;
+        this.Service = homebridge.hap.Service;
+        this.Characteristic = homebridge.hap.Characteristic;
         
         this.config = Object.assign(
         {},
