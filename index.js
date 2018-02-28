@@ -17,8 +17,6 @@ class GPIOSwitch {
     constructor(homebridge, log, config)
     {    
         this.log = log;
-        this.Service = homebridge.hap.Service;
-        this.Characteristic = homebridge.hap.Characteristic;
         
         this.config = Object.assign(
         {},
@@ -54,20 +52,20 @@ class GPIOSwitch {
         }
         rpio.init(this.config.rpioSettings);
         
-        this.service = new Service.Switch(this.config.name, this.config.name);
+        this.service = new homebridge.hap.Service.Switch(this.config.name, this.config.name);
         
-        this.infoService = new Service.AccessoryInformation();
+        this.infoService = new homebridge.hap.Service.AccessoryInformation();
         this.infoService
-            .setCharacteristic(Characteristic.Manufacturer, this.config.type.manufacturer)
-            .setCharacteristic(Characteristic.Model, this.config.type.model)
-            .setCharacteristic(Characteristic.SerialNumber, this.config.type.serialNumber);
+            .setCharacteristic(homebridge.hap.Characteristic.Manufacturer, this.config.type.manufacturer)
+            .setCharacteristic(homebridge.hap.Characteristic.Model, this.config.type.model)
+            .setCharacteristic(homebridge.hap.Characteristic.SerialNumber, this.config.type.serialNumber);
         
         // Initialize the switch service
         
         this._switch = new Switch(this.log, this.config.switch.pin, this.config.switch.activeValue);
         
         this.service
-            .getCharacteristic(Characteristic.On)
+            .getCharacteristic(homebridge.hap.Characteristic.On)
             .on("set", this.setState.bind(this));
     }
 
