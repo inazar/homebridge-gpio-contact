@@ -14,19 +14,13 @@ Sample config:
         {
             "accessory":"GPIO-Switch",
             "name":"My switch",
-            "switch":{
-                "pin":32,
-                "activeValue":0
-            },
-            "initialFallbackState": false,
-            "rpioSettings":{
-                "gpiomem":true,
-                "mapping":"physical"
-            }
+            "pin": 5,
+            "activeValue":false
+            "initialState": false
         }
     ]
 }
 ```
-* `rpioSettings` is being passed to rpio when initializing
-* `switch` set the pin to use (see ```rpioSettings``` to chose mapping)
-* `initialFallbackState` set the switch on or off on load (as no state is kept inbetween reboots)
+* set the `pin` to use (GPIO number)
+* `initialState` set the switch on or off on load (as no state is kept inbetween reboots)
+* `activeValue` value to apply when switching on (true => HIGH, false => LOW)
