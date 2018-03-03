@@ -2,7 +2,7 @@
   "name": "homebridge-gpio-switch",
   "version": "1.0.0",
   "description": "Exposes a switch accessory to HomeBridge that uses a RaspberryPi GPIO pins",
-  "main": "index.js",
+  "main": "dist/index.js",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
@@ -23,6 +23,9 @@
     "homebridge": ">=0.4.32"
   },
   "dependencies": {
-    "rpio": ">=0.9.20"
+    "onoff": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/onoff": "0.0.27"
   }
 }
