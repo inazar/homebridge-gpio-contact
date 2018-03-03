@@ -1,6 +1,6 @@
 {
   "name": "homebridge-gpio-switch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Exposes a switch accessory to HomeBridge that uses a RaspberryPi GPIO pins",
   "main": "dist/index.js",
   "keywords": [
