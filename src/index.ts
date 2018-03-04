@@ -52,7 +52,7 @@ export class GPIOSwitch {
             });
 
         this.service
-            .getCharacteristic(homebridge.hap.Characteristic.Indentify)
+            .getCharacteristic(homebridge.hap.Characteristic.Identify)
             .on("set", (value: boolean, callback: setCallback) => {
                 this.log("New value: " + value);
                 this._switch.toggle();
