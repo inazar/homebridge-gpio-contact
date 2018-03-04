@@ -1,23 +1,24 @@
 {
-  "name": "homebridge-gpio-switch",
-  "version": "1.1.0",
+  "name": "homebridge-gpio-contact",
+  "version": "1.0.0",
   "description": "Exposes a switch accessory to HomeBridge that uses a RaspberryPi GPIO pins",
   "main": "dist/index.js",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
-    "switch"
+    "switch",
+    "contact"
   ],
   "author": "Morten Vejhe <morten@vejhe.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vejhe/homebridge-gpio-switch.git"
+    "url": "https://github.com/vejhe/homebridge-gpio-contact.git"
   },
   "bugs": {
-    "url": "https://github.com/vejhe/homebridge-gpio-switch/issues"
+    "url": "https://github.com/vejhe/homebridge-gpio-contact/issues"
   },
-  "homepage": "https://github.com/vejhe/homebridge-gpio-switch",
+  "homepage": "https://github.com/vejhe/homebridge-gpio-contact",
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.4.32"
