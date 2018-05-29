@@ -15,7 +15,7 @@ Sample config:
             "accessory":"GPIO-Switch",
             "name":"My switch",
             "pin": 5,
-            "activeValue": false
+            "activeValue":false
             "initialState": false
         }
     ]
