@@ -49,6 +49,11 @@ export class GPIOSwitch {
                 this.log("New value: " + value);
                 this._switch.state = value;
                 callback(null);
+            })
+            .on("get", (callback: getCallback<boolean>) => {
+                let value = this._switch.state;
+                this.log("Current value: " + value);
+                callback(null, value);
             });
 
         this.service
